@@ -24,3 +24,8 @@ python manage.py runserver
 ```
 http://localhost:8000/
 ```
+
+5. View the documentation at
+```
+http://localhost:8000/docs/
+```
