@@ -10,7 +10,23 @@ from .serializers import NoteSerializer, NoteContentSerializer
 
 class NoteViewSet(viewsets.ModelViewSet):
     """
-    Perform CRUD on Note
+    retrieve:
+    Return the given note.
+
+    list:
+    Return a list of all the existing notes.
+
+    create:
+    Create a new note instance.
+    
+    partial_update:
+    Partially update a note instance.
+    
+    update:
+    Update a note instance. Note that every put is made to be a partial update
+    
+    delete:
+    Delete a note instance.
     """
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
@@ -35,7 +51,23 @@ class NoteViewSet(viewsets.ModelViewSet):
 
 class NoteContentViewSet(viewsets.ModelViewSet):
     """
-    Perform CRUD on NoteContents
+    retrieve:
+    Return the given note content.
+
+    list:
+    Return a list of all the existing note contents.
+
+    create:
+    Create a new note content instance.
+    
+    partial_update:
+    Partially update a note content instance.
+    
+    update:
+    Update a note content instance. Note that every put is made to be a partial update
+    
+    delete:
+    Delete a note content instance.
     """
     serializer_class = NoteContentSerializer
     lookup_field = 'note_content_id'
