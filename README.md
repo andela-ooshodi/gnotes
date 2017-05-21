@@ -1,4 +1,4 @@
-# Gnotes
+# GNotes
 An attempted clone of google keep 
 
 ## Installation

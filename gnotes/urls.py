@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+import api.urls
+
+from django.conf.urls import url, include
 from django.contrib import admin
+
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='GNotes API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^gnotes/api/', include(api.urls)),
+    url(r'^docs/', schema_view)
 ]
