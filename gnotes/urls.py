@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 import api.urls
+import gnotefront.urls
 
 from django.conf.urls import url, include
 from django.contrib import admin
@@ -25,5 +26,6 @@ schema_view = get_swagger_view(title='GNotes API')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^gnotes/api/', include(api.urls)),
-    url(r'^docs/', schema_view)
+    url(r'^docs/', schema_view),
+    url(r'^', include(gnotefront.urls))
 ]
